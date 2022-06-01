@@ -1,0 +1,27 @@
+steps:
+  - id: "terraform init"
+    name: "hashicorp/terraform:1.0.0"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - |
+        cd vm-terraform-test
+        terraform init
+
+  - id: "terraform plan"
+    name: "hashicorp/terraform:1.0.0"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - |
+        cd vm-terraform-test
+        terraform plan
+
+  - id: "terraform apply"
+    name: "hashicorp/terraform:1.0.0"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - |
+        cd vm-terraform-test
+        terraform apply
