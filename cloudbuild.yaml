@@ -25,6 +25,6 @@ steps:
       - |
         echo "Executing 'terraform apply' ..."
         cd vm-terraform-test
-        terraform apply
+        terraform apply -auto-approve
 options:
   logging: CLOUD_LOGGING_ONLY
