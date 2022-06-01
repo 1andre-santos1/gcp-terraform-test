@@ -25,3 +25,6 @@ steps:
       - |
         cd vm-terraform-test
         terraform apply
+
+options:
+  logging: CLOUD_LOGGING_ONLY
