@@ -13,7 +13,7 @@ resource "google_compute_instance" "default" {
     }
   }
   network_interface {
-    network    = google_compute_network.vpc
-    subnetwork = google_compute_subnetwork.subnet
+    network    = google_compute_network.vpc.name
+    subnetwork = google_compute_subnetwork.vpc-subnet.name
   }
 }
