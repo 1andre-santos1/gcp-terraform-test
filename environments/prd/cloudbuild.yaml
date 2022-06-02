@@ -5,8 +5,8 @@ steps:
     args:
       - "-c"
       - |
-        echo "Executing 'terraform init' ..."
-        cd vm-terraform-test
+        echo "Executing 'terraform init' on PRD environment..."
+        cd environments/prd
         terraform init
   - id: "terraform plan"
     name: "hashicorp/terraform:1.0.0"
@@ -14,8 +14,8 @@ steps:
     args:
       - "-c"
       - |
-        echo "Executing 'terraform plan' ..."
-        cd vm-terraform-test
+        echo "Executing 'terraform plan' on PRD environment..."
+        cd environments/prd
         terraform plan
   - id: "terraform apply"
     name: "hashicorp/terraform:1.0.0"
@@ -23,8 +23,8 @@ steps:
     args:
       - "-c"
       - |
-        echo "Executing 'terraform apply' ..."
-        cd vm-terraform-test
+        echo "Executing 'terraform apply' on PRD environment..."
+        cd environments/prd
         terraform apply -auto-approve
 options:
   logging: CLOUD_LOGGING_ONLY
