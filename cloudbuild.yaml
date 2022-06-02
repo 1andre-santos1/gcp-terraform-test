@@ -1,0 +1,30 @@
+steps:
+  - id: "terraform init"
+    name: "hashicorp/terraform:1.0.0"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - |
+        echo "Executing 'terraform init' ..."
+        cd vm-terraform-test
+        terraform init
+  - id: "terraform plan"
+    name: "hashicorp/terraform:1.0.0"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - |
+        echo "Executing 'terraform plan' ..."
+        cd vm-terraform-test
+        terraform plan
+  - id: "terraform apply"
+    name: "hashicorp/terraform:1.0.0"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - |
+        echo "Executing 'terraform apply' ..."
+        cd vm-terraform-test
+        terraform apply -auto-approve
+options:
+  logging: CLOUD_LOGGING_ONLY

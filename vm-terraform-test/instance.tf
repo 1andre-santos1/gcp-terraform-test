@@ -1,7 +1,3 @@
-provider "google" {
-  project = var.project
-  region  = var.region
-}
 resource "google_compute_instance" "default" {
   name         = var.name
   machine_type = var.machine_type
@@ -17,9 +13,7 @@ resource "google_compute_instance" "default" {
     }
   }
   network_interface {
-    network = "default"
-    access_config {
-
-    }
+    network    = google_compute_network.vpc.name
+    subnetwork = google_compute_subnetwork.vpc-subnet.name
   }
 }
