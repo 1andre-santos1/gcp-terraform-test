@@ -50,7 +50,7 @@ variable "scratch_disk" {
 }
 variable "region" {
   type        = string
-  default     = "europe-southwest1-a"
+  default     = "europe-southwest1"
   description = "Name of Region."
 }
 variable "description" {
