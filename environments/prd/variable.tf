@@ -1,6 +1,6 @@
 variable "name" {
   type        = string
-  default     = "vm-terraform-test"
+  default     = "vm-terraform-prd"
   description = " (Required) A unique name for the resource, required by GCE. Changing this forces a new resource to be created"
 }
 variable "machine_type" {
